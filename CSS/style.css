@@ -1,0 +1,417 @@
+html{
+    width: auto;
+    height: auto;
+    font-family: 'Konkhmer Sleokchher', cursive;
+    user-select: none;
+    
+    /* font-size: clamp(10px, 1vw + 2rem, 24px ); */
+    /*Pas besoin car le texte adaptative est assez */
+}
+
+body{
+    background-color:var(--couleur-fond);
+
+    /*pas besoin du curseur en default*/
+    cursor: none;
+}
+
+/*=============SECTION PAGE INTRO==============*/
+/*===============================================*/
+.page-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.barre-menu-fix{
+    width: 100vw;
+    min-height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color:var(--couleur-fond);
+
+}
+.image-intro{
+    width: 100vw;
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--couleur-fond);
+    
+}
+/*===============================================*/
+
+
+
+
+/*=============SECTION PAGE QUIZ==============*/
+/*===============================================*/
+.quiz{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    display: none;
+}
+
+.titre-questions{
+    width: 100vw;
+    height: 44vh;
+    background-color:var(--couleur-commencer);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.choix-reponses{
+    width: 100vw;
+    min-height: 44vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--couleur-fond);
+
+}
+/*===============================================*/
+
+
+
+/*--------HMMMM ????--------*/
+
+footer{
+    width: 100vw;
+    height: 28vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+/*=============SECTION FIN QUIZ==============*/
+/*===============================================*/
+.resultat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    display: none;
+}
+header{
+    width: 100vw;
+    min-height:30vh;
+    display: flex;
+    justify-content:center;
+    
+}
+.indication-mot-resultat{
+    padding-top: 13vh;
+}
+
+.bouton-recommencer{
+    padding-top: 10vh;
+}
+
+/*===============================================*/
+
+
+
+
+
+
+
+/*=================AUTRE STYLE ================*/
+/*===============================================*/
+/*===============================================*/
+/*===============================================*/
+
+
+/* ========== LES ANIMATIONS ================*/
+
+@keyframes animation-reponse-correct{
+    from {
+       transform: translateX(0%);  opacity: 100;
+    }
+    50%{
+        transform: translateX(30%); opacity: 50;
+    }
+    75%{
+        transform: translateX(60%); opacity: 0;
+    }
+    to {
+        transform: translateX(0%); opacity: 100;
+    }
+}
+
+@keyframes animation-reponse-incorrect{
+    from {
+        transform: translateX(0%);
+     }
+     50%{
+         transform: translateX(30%); 
+     }
+     75%{
+         transform: translateX(-30%);
+     }
+     to {
+         transform: translateX(0%);
+     }
+}
+
+
+@keyframes animation-resultat{
+    from{
+        transform: scale(0);
+    }
+    20%{
+        transform: scale(0.5);
+    }
+    40%{
+        transform: scale(1);
+    }
+    60%{
+        transform: scale(2);
+    }
+    80%{
+        transform: scale(2);
+    }
+    to{
+        transform: scale(1);
+    }
+
+}
+
+
+
+/* ============= mes couleurs  !!!! ===========*/
+:root{
+    --couleur-texte-original: black;
+    --couleur-texte-modeJour: white;
+    --couleur-commencer: #30ebd2;
+    --couleur-fond: #008e96;
+    --couleur-barre-menu: #35caff;
+
+}
+/*===============================================*/
+
+
+/*======= STYLISER LES IMAGES AU INTRO ======*/
+picture{
+    height: 100%;
+    width: 100%;
+}
+picture img{
+    object-fit:fill;
+    max-width: 100%;
+    height: auto;
+}
+/*===============================================*/
+
+
+
+
+/*======= Barre d'avancement =====*/
+.barre-avancement{
+    height: 2vh;
+    width: 100vw;
+    border: 1px solid white;
+    background-color: white;
+    
+
+    position: absolute;
+    left: 0;
+    top: 1;
+}
+/*===============================================*/
+
+
+
+
+/* ======= CHANGEMENT CURSEUR Part 1 ===========*/
+.curseur{
+    /*propriete physique*/
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #36c5cc;;
+    border: 2.75px solid white ;
+    border-radius: 50%;
+    opacity: 50%;
+    
+
+    /*position*/
+    position: fixed;
+    top: -1.25rem;
+    left: -1.25rem;
+
+    /*transformation*/
+    /* transform: translate(calc(0px), calc(0px) - 1rem); */
+
+    /*transition et OPTION 2 de cubic-bezier(.71,.31,.59,.66) */
+    transition: translate 0.1s cubic-bezier(0.15, 0.9, 0.35, 0.95);
+    
+
+    /*mieux voir le curseur*/
+    z-index: 600;
+
+    /*mieux voir le curseur*/
+    pointer-events: none;
+
+    
+}
+/* ============== CHANGEMENT CURSEUR PART 2 (point blanc)======= */
+.curseur::before{
+    content: "";
+    position: absolute;
+    height: 0.5rem;
+    width: 0.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+   
+}
+/*===============================================*/
+
+
+
+/* ============== MODIFICATION TITRE ======= */
+
+.titre-principal-du-quiz {
+    width: 30vw;
+    height: 7vh;
+    background-color: aliceblue;
+    position: relative;
+
+    animation: animation-intro-quiz 1s ;
+    transform: translateX(0) ;
+}
+/*===============================================*/
+
+
+
+/* ============== MODIFICATION DARK MODE  ======= */
+#id-check-box{
+    display: none;
+}
+label.checkbox-endroit-cliquer{
+    position: relative;
+    width: 12vmin;
+    height: 5vmin;
+    border-radius: 2.5vmin;
+    border: 1px solid white;
+    background-color: #00c6d0;
+    margin: 0 1vmin;
+}
+
+/* Cercle noir */
+label.checkbox-endroit-cliquer::before{
+    position: absolute;
+    content: "";
+
+    width: 6vmin;
+    height: 6vmin;
+    top: -0.5vmin;
+    left: 0;
+    border-radius: 3vmin;
+    background-color: #5dbcff;
+    box-shadow: 0px 2px 6px white;
+    transition: left 400ms;
+}
+#id-check-box:checked + label.checkbox-endroit-cliquer::before{
+    left: 6vmin;
+}
+/*Pseudo-élément sur le body*/
+body {
+    position: relative;
+}
+/*===============================================*/
+
+
+
+
+/* ============== BOUTON DE COMMENCER  ======= */
+.section-commencer{
+    position: relative;
+    height: 5vh;
+    width: 300px;
+    background-color: white;
+    border-radius: 1vh;
+    user-select: none;
+    overflow: hidden;
+    
+}
+/*Pseudo elements*/
+.section-commencer::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--couleur-commencer);
+    
+    translate: -100%;
+    transition: translate 0.4s;
+    opacity: 65%;
+}
+.section-commencer:hover::before{
+    translate: 0%;
+    
+}
+/*===============================================*/
+
+
+
+
+/* ============== THEME NUIT OU JOUR  ======= */
+.theme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*===============================================*/
+
+
+
+
+/* ============== APPLIQUER LES ANIMATIONS  ======= */
+main.resultat .animationResultat{
+    animation: animation-resultat 1.3s ease-in 200ms 1 normal forwards;
+}
+/*===============================================*/
+
+
+
+
+
+/* ============== RESPONSIVE SCREEN (ADAPTATIVE)======= */
+
+/*----SMARTPHONE ET IPHONES -----*/
+
+ @media screen and (min-width: 500px){ 
+    /* section Intro changement sur Titre et dark mode8 */
+     .intro-header{
+        justify-content:space-evenly;
+    }
+    body{
+        font-size: 20px;
+    }
+}
+ 
+/*----TABLETTE  -----*/
+@media screen and (min-width: 1000px){
+    body{
+        font-size: 25px;
+    }
+}
+/*===============================================*/
+ 
+
+ 

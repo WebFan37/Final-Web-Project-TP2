@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--Ajustement-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Quiz au tour du monde (TP 2 FINAL)</title>
+
+    <!--LES STYLES-->
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/styleDecorationBase.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!--Nouveau font de Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Heebo&family=Konkhmer+Sleokchher&family=Mukta:wght@200;500&family=Prompt:wght@500&family=Tilt+Warp&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!--Nouveau icon de Google-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body> 
+    <section class="barre-menu-fix">
+           <div class="titre-principal-du-quiz">QUIZ DU MONDE</div>
+
+            <!--CHECKBOX DARK THEME-->
+            
+                <div class="theme">
+                    <span class="material-symbols-outlined">light_mode</span>
+                    <input type="checkbox" id="id-check-box" class="burger">
+                    <label for="id-check-box" class="checkbox-endroit-cliquer"></label>
+                    <span class="material-symbols-outlined">nightlight</span>
+                </div>  
+
+                <div class="bouton-retour">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    RETOUR
+               </div>
+       </section>
+
+       
+    <!--SECTION PAGE INTRO-->
+    <main class="page-intro">
+       <!--Les images d'intro-->
+       <div class="image-intro">
+            <picture>
+                <source media="(min-width: 1000px)" srcset="Medias/olympic-ultra-wide.jpg">
+                <source media="(min-width: 780px)" srcset="Medias/olympic-wide.jpg">
+                <source media="(min-width: 500px)" srcset="Medias/olympic-tele.jpg">
+                <img src="Medias/olympic-ultra-wide.jpg" alt="Parc Olympique de Montreal"></picture>
+       </div>
+       
+       <footer>
+           <div class="section-commencer">COMMENCER LE QUIZ</div>
+       </footer>
+   </main>
+   <!--CURSEUR-->
+   <div class="curseur"></div>
+
+
+   <!--SECTION PAGE QUIZ-->
+   <main class="quiz">
+        
+           <div class="barre-avancement"></div>
+
+         <section class="question-reponses">
+               <div class="titre-questions"></div>
+               <div class="choix-reponses">
+                   <div class="reponse1"></div>
+                   <div class="reponse2"></div>
+                   <div class="reponse3"></div>
+                   <div class="reponse4"></div>
+               </div>
+       </section>
+   </main>
+
+   <!--SECTION PAGE FIN-->
+   <main class="resultat">
+       <header>
+           <div class="indication-mot-resultat"></div>
+           
+       </header>
+       
+       <div class="bouton-recommencer">
+        <span class="material-symbols-outlined">
+            restart_alt
+            </span>
+       </div>
+
+   </main>
+ 
+   <!--Ajout des scripts-->
+   <script src="js/questionnaire.js"></script>
+   <script src="js/index.js"></script>
+</body>
+</html>
