@@ -127,7 +127,7 @@ function changerTheme (event){
     if (caseTheme.checked == true){
         // Test
         //console.log("Texte 1");
-        root.style.setProperty("--couleur-fond", "#005c60")
+        root.style.setProperty("--couleur-fond", "#005c60");
         
     } else{
         //test
@@ -386,16 +386,16 @@ function recommencer(){
    largeurDeBarre = 0; 
    cibleBarre = 0; 
 
-   //enleve la page intro
+   //enlve la page intro
     pageIntro.style.display = "none";
     
-    //enleve l'ecouteur qui gere affichage du question
+    //enlève l'ecouteur qui gère affichage du question
     boutonDeRestart.removeEventListener('click', recommencer);
 
-    //enleve le conteneur fin quiz
+    //enlève le conteneur fin quiz
     finQuiz.style.display = "none";
 
-    //scene quiz
+    //scène quiz
     placePourQuiz.style.display = "flex";
 
     //PROCHAIN FONCTION
@@ -413,8 +413,8 @@ function bougerCurseur(event){
 
     //Window matchMedia 
     if (window.matchMedia("(hover: hover)").matches){
-        document.querySelector("body").style.cursor = "none";
+        document.querySelector(".curseur").style.display = "none";
     } else {
-        document.querySelector("body").style.cursor = "auto";
+        document.querySelector(".curseur").style.display = "auto";
     }
 }
