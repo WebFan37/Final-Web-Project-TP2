@@ -70,7 +70,7 @@ body{
 }
 
 
-.choix-reponses{
+.footer{
     width: 100vw;
     min-height: 44vh;
     display:flex;
@@ -84,15 +84,7 @@ body{
 
 
 
-/*--------HMMMM ????--------*/
 
-footer{
-    width: 100vw;
-    height: 28vh;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-}
 
 /*=============SECTION FIN QUIZ==============*/
 /*===============================================*/
@@ -133,6 +125,27 @@ header{
 
 
 /* ========== LES ANIMATIONS ================*/
+
+@keyframes animation-introduction{
+    from {
+       transform:scale(1) translateX(0%); background-color:rgb(255, 255, 255) ;
+    }
+    25%{
+        background-color:sandybrown;
+    }
+    50%{
+        transform: scale(2) translateX(50%) translateY(80%); background-color: rgb(255, 110, 110);
+    }
+    75%{
+        background-color:rgb(255, 171, 248);
+    }
+    87.5%{
+        background-color:rgb(45, 255, 241);
+    }
+    to {
+         transform:scale(1) ;
+    }
+}
 
 @keyframes animation-reponse-succes{
     from {
@@ -422,7 +435,7 @@ body {
 
 /* ============== APPLIQUER LES ANIMATIONS  ======= */
 main.resultat .animationResultat{
-    animation: animation-resultat 1.3s ease-in 200ms 1 normal forwards;
+    animation: animation-resultat 0.6s ease-in 200ms 1 normal forwards;
 }
 
 div.titre-questions .succes{
@@ -431,6 +444,12 @@ div.titre-questions .succes{
 div.titre-questions .echec{
     animation: animation-reponse-echec 1s ;
 }
+
+
+div.titre-principal-du-quiz {
+    animation: animation-introduction 1.5s;
+}
+
 /*===============================================*/
 
 

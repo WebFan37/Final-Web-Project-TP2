@@ -35,7 +35,8 @@ let cibleBarre = 0;
 
 
 
-//-------------SECTION DES QUIZ ----------------
+//-------------SECTION DES QUIZ ----------------//
+
 //Page d'intro 
 let pageIntro = document.querySelector(".page-intro");
 
@@ -135,6 +136,8 @@ function changerTheme (event){
     }
 
 }
+
+
 
 
 //CommencerSet1
@@ -272,7 +275,7 @@ function verification (event){
 
     localStorage.setItem("les-scores-historiques", JSON.stringify(historique));
 
-//===========================//
+    //===========================//
 
 
 
