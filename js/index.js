@@ -373,6 +373,9 @@ function retourAuDebut(){
     //Pas de musique
     musiqueQuiz.pause();
 
+    //enlève resultat
+    finQuiz.style.display = "none";
+
 
 }
 
@@ -412,9 +415,9 @@ function bougerCurseur(event){
     
 
     //Window matchMedia 
-    if (window.matchMedia("(hover: hover)").matches){
-        document.querySelector(".curseur").style.display = "none";
-    } else {
-        document.querySelector(".curseur").style.display = "auto";
-    }
+    // if (window.matchMedia("(hover: hover)").matches){
+    //     document.querySelector(".curseur").style.display = "none";
+    // } else {
+    //     document.querySelector(".curseur").style.display = "auto";
+    // }
 }
