@@ -134,33 +134,30 @@ header{
 
 /* ========== LES ANIMATIONS ================*/
 
-@keyframes animation-reponse-correct{
+@keyframes animation-reponse-succes{
     from {
-       transform: translateX(0%);  opacity: 100;
+       background-color: white; transform: translateX(0%);
     }
     50%{
-        transform: translateX(30%); opacity: 50;
-    }
-    75%{
-        transform: translateX(60%); opacity: 0;
+        background-color: rgb(255, 236, 62); transform: translateX(40%);
     }
     to {
-        transform: translateX(0%); opacity: 100;
+        background-color: rgb(54, 255, 47); transform: translateX(0%);
     }
 }
 
-@keyframes animation-reponse-incorrect{
+@keyframes animation-reponse-echec{
     from {
-        transform: translateX(0%);
-     }
-     50%{
-         transform: translateX(30%); 
-     }
-     75%{
-         transform: translateX(-30%);
-     }
+        background-color: white; transform: translateX(0%);
+    }
+    50%{
+        background-color: rgb(255, 236, 62); transform: translateX(20%);
+    }
+    75%{
+        background-color: rgb(255, 155, 62); transform: translateX(-20%);
+    }
      to {
-         transform: translateX(0%);
+         background-color: rgb(255, 112, 112); transform: translateX(0%)
      }
 }
 
@@ -288,9 +285,25 @@ picture img{
     height: 7vh;
     background-color: aliceblue;
     position: relative;
+    
+}
 
-    animation: animation-intro-quiz 1s ;
-    transform: translateX(0) ;
+.titre-principal-du-quiz::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--couleur-fond);
+    opacity: 0;
+
+
+    transition: opacity 0.5s;
+}
+
+.titre-principal-du-quiz:hover::before{
+    opacity: 0.6;
 }
 /*===============================================*/
 
@@ -358,14 +371,40 @@ body {
     background-color: var(--couleur-commencer);
     
     translate: -100%;
-    transition: translate 0.4s;
+    transition: translate 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     opacity: 65%;
+
+   
 }
 .section-commencer:hover::before{
     translate: 0%;
     
 }
 /*===============================================*/
+
+
+
+/* ============== BOUTON DE RETOUR  ======= */
+/*pseudo element pour effet de hover*/
+.bouton-retour::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: azure;
+
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    z-index: -1;
+}
+.bouton-retour:hover::before{
+    opacity: 0.7;
+}
+
+
 
 
 
@@ -384,6 +423,13 @@ body {
 /* ============== APPLIQUER LES ANIMATIONS  ======= */
 main.resultat .animationResultat{
     animation: animation-resultat 1.3s ease-in 200ms 1 normal forwards;
+}
+
+div.titre-questions .succes{
+    animation: animation-reponse-succes 0.6s ;
+}
+div.titre-questions .echec{
+    animation: animation-reponse-echec 1s ;
 }
 /*===============================================*/
 
@@ -405,12 +451,14 @@ main.resultat .animationResultat{
     }
 }
  
-/*----TABLETTE  -----*/
+/*----TABLETTE ET PC -----*/
 @media screen and (min-width: 1000px){
     body{
         font-size: 25px;
     }
 }
+
+
 /*===============================================*/
  
 

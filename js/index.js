@@ -279,18 +279,18 @@ function verification (event){
     let choixFinal = event.target;
 
     if (choixFinal.indexChoix == questionSet1[noQuestionCourante].reponse){
-        // choixFinal.classList.add('succes');
+        choixFinal.classList.add('succes');
         // console.log("CORRECT " + nombreQuestionCorrect);
         nombreQuestionCorrect += 1;
         sonRessi.play();
     }
     else{
-        // choixFinal.classList.add('echec');
+        choixFinal.classList.add('echec');
         // console.log("WRONG" + nombreQuestionCorrect);
         sonEchec.play();
     }
 
-    choixFinal.addEventListener('click', mettreProchainsQuestion);
+    choixFinal.addEventListener('animationend', mettreProchainsQuestion);
 
 }
 
@@ -356,7 +356,7 @@ function retourAuDebut(){
     cibleBarre = 0; 
 
     //Test
-    console.log("TEST POUR SAVOIR S'IL A MARCHÉ " + ((345+234)-34) * 10);
+    //console.log("TEST POUR SAVOIR S'IL A MARCHÉ " + ((345+234)-34) * 10);
 
     //enleve le conteneur du quiz???
     placePourQuiz.style.display = "none";
